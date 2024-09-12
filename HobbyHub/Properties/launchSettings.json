@@ -1,0 +1,17 @@
+{
+  "profiles": {
+    "HobbyHub": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "Token": "7007967912:AAFwc2cN6ewIB4HDDJiw7WkvyQrEQOjVmP4"
+      }
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    }
+  }
+}
