@@ -7,6 +7,7 @@ services:
     env_file:
       - HobbyHub/.env
   postgres:
+    container_name: Postgres
     image: "postgres:17rc1-alpine"
     ports:
     - 5432:5432
