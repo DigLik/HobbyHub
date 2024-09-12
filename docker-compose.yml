@@ -1,0 +1,16 @@
+services:
+  hobbyhub:
+    image: ${DOCKER_REGISTRY-}hobbyhub
+    build:
+      context: .
+      dockerfile: HobbyHub/Dockerfile
+    env_file:
+      - HobbyHub/.env
+  postgres:
+    image: "postgres:17rc1-alpine"
+    ports:
+    - 5432:5432
+    environment:
+    - POSTGRES_USER=posgres
+    - POSTGRES_PASSWORD=Posgres123
+    - POSTGRES_DB=HobbyHub
