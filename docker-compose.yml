@@ -6,12 +6,26 @@ services:
       dockerfile: HobbyHub/Dockerfile
     env_file:
       - HobbyHub/.env
+    networks:
+      - dev
+    depends_on:
+     - postgres
+
   postgres:
     container_name: Postgres
     image: "postgres:17rc1-alpine"
+    user: postgres
+
     ports:
     - 5432:5432
     environment:
-    - POSTGRES_USER=posgres
-    - POSTGRES_PASSWORD=Posgres123
     - POSTGRES_DB=HobbyHub
+    - POSTGRES_PASSWORD=Qwerty_123456
+
+networks:
+  dev:
+    driver: bridge
+
+volumes:
+  db-data:
+  

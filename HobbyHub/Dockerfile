@@ -13,8 +13,10 @@ WORKDIR /src
 COPY ["HobbyHub/HobbyHub.csproj", "HobbyHub/"]
 RUN dotnet restore "./HobbyHub/HobbyHub.csproj"
 COPY . .
+RUN dotnet tool install --global dotnet-ef
 WORKDIR "/src/HobbyHub"
 RUN dotnet build "./HobbyHub.csproj" -c $BUILD_CONFIGURATION -o /app/build
+# RUN dotnet ef database update
 
 # Этот этап используется для публикации проекта службы, который будет скопирован на последний этап
 FROM build AS publish
